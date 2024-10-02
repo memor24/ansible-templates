@@ -1,1 +1,8 @@
-
+- name: Install Vim using a role from Ansible Galaxy
+  hosts: localhost
+  tasks:
+    - name: Include role to install Vim
+      include_role:
+        name: mullholland.vim
+      vars:
+        present: true
