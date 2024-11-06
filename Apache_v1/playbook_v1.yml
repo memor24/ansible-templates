@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  promise: true
+  tasks:
+
+    - name: install apache on ubuntu
+      apt:
+        cache_update: yes
+        name: 
+          - apache2
+          - libapache2-mod-php
+        state: latest
+      when: ansible_distribution == "Ubuntu"
+
+    - name: install apache on centos
+      dnf:
+        cache_update: yes
+        name: 
+          - httpd
+          - php
+        state: latest
+      when: ansible_distribution == "CentOS"
