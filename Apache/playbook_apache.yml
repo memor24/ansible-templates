@@ -22,6 +22,14 @@
         state: latest
       when: ansible_distribution == "CentOS"
 
+    - name: start httpd in centos
+      tags: apache,centos
+      service: 
+        name: httpd
+        status: started
+        enabled: yes
+      when: ansible_distribution== "CentOS"  
+
 ### ALTERNATIVELY: can use variables defined in inventory: ###
 
   # - name: install apache & php for linux servers
@@ -31,4 +39,5 @@
   #         - "{{ apache_package }}"
   #         - "{{ php_package }}"
   #       state: latest
-# -> ansiblle-playbook --ask-promise-pass playbook_v2.yml       
+
+# -> ansiblle-playbook --ask-promise-pass playbook_apache.yml       
