@@ -21,3 +21,14 @@
           - php
         state: latest
       when: ansible_distribution == "CentOS"
+
+### ALTERNATIVELY: can use variables defined in inventory: ###
+
+  # - name: install apache & php for linux servers
+  #   package:
+  #       update_cache: yes
+  #       name:
+  #         - "{{ apache_package }}"
+  #         - "{{ php_package }}"
+  #       state: latest
+# -> ansiblle-playbook --ask-promise-pass playbook_v2.yml       
