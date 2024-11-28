@@ -1,8 +1,0 @@
-----
--- hosts: all
--  become: yes
--  tasks:
--    name: copy a filee to all app servers # copy module + Ansible Vault
--    copy:
--     src: /usr/src/finance/index.html
--     dest: /opt/finance
