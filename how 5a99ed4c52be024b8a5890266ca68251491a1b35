@@ -1,0 +1,113 @@
+[33mcommit 5a99ed4c52be024b8a5890266ca68251491a1b35[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m
+Author: memor24linux <myemail@example.com>
+Date:   Thu Nov 28 22:32:01 2024 +0330
+
+    copy module updated
+
+[33mcommit 5b0de223c34e03181414a3eca6fbc05c9587d96c[m
+Author: memor24linux <myemail@example.com>
+Date:   Wed Nov 27 09:36:59 2024 +0330
+
+    update ansible modules use
+
+[33mcommit 553702e8e888a6d506ffb428ebd2421689a51b51[m
+Author: memor24linux <myemail@example.com>
+Date:   Fri Nov 22 15:35:19 2024 +0330
+
+    updated valt and copy module
+
+[33mcommit 204a6269436cdec0defe5c084764754dcae3af02[m
+Author: memor24linux <myemail@example.com>
+Date:   Wed Nov 13 17:09:57 2024 +0330
+
+    updated apache
+
+[33mcommit 38e2b861049319bb8a9558d92a891b092fc860e3[m
+Author: Mehdi Morshedi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Nov 13 03:48:39 2024 -0700
+
+    Delete Apache_v2 directory
+
+[33mcommit f1a1bac175706be3a3aad4ec596d1aed5087da1e[m
+Author: Mehdi Morshedi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Nov 13 03:47:55 2024 -0700
+
+    Update inventory.yml
+
+[33mcommit eaa00587172f54d8cfa71142f97b6b6ba1aa0537[m
+Author: Mehdi Morshedi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Nov 13 03:46:56 2024 -0700
+
+    Update playbook_v1.yml
+
+[33mcommit 16804770c250efe0b01e30c1407050c950d03937[m
+Author: memor24linux <myemail@example.com>
+Date:   Thu Nov 7 00:45:21 2024 +0330
+
+    wrote the lamp playbook
+
+[33mcommit da4159c80ef8fb53e7a510bfdd097dc1df2ddc72[m
+Author: memor24linux <myemail@example.com>
+Date:   Wed Nov 6 23:33:37 2024 +0330
+
+    updated varied ansible methods with apache-php
+
+[33mcommit fd93430c9cdfcc58b61317457f383e144203aea2[m
+Author: memor24linux <myemail@example.com>
+Date:   Wed Nov 6 22:32:29 2024 +0330
+
+    updated playbook
+
+[33mcommit 414a54885cfd1d565b1598b172fe0d0753e412e5[m
+Author: memor24linux <myemail@example.com>
+Date:   Mon Nov 4 22:55:20 2024 +0330
+
+    ansible dir updates
+
+[33mcommit 75dcaa056c5d8a91a5243e707b951d31f6d8a53a[m
+Author: Mehdi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Oct 2 16:55:10 2024 -0600
+
+    Delete VIM
+
+[33mcommit eacb1fde850d9279da315227448dfeed39268914[m
+Author: Mehdi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Oct 2 16:54:50 2024 -0600
+
+    Delete example_website
+
+[33mcommit 2a06e1d5fb8296689928d08cdba0dc3eae7277af[m
+Author: memor24linux <myemail@example.com>
+Date:   Wed Oct 2 16:47:45 2024 -0600
+
+    dir updates
+
+[33mcommit 147a84a57450cf1a1add1692e7e4d14cbe20b7ce[m
+Author: memor24linux <myemail@example.com>
+Date:   Wed Oct 2 16:41:00 2024 -0600
+
+    organized file structure  based on ansible best practices
+
+[33mcommit 6c3e9df272bcc77e854fc98a07c28613730b54b4[m
+Author: Mehdi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Oct 2 16:05:32 2024 -0600
+
+    Update VIM
+
+[33mcommit 76c55288ba11ef8b5b40905f47135eca070f6623[m
+Author: Mehdi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Oct 2 16:04:59 2024 -0600
+
+    Create VIM
+
+[33mcommit 701bd3739a5aec2ce63c26d91c23ebdd3da0fccb[m
+Author: Mehdi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Oct 2 14:02:27 2024 -0600
+
+    Create example_website
+
+[33mcommit 4b40d0f07d3a816499f722d80175a0a52a5f40d3[m
+Author: Mehdi <112832477+memor24@users.noreply.github.com>
+Date:   Wed Oct 2 14:02:01 2024 -0600
+
+    Initial commit
