@@ -1,0 +1,27 @@
+#blockinfile module
+---
+- name: install apache & config html
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: install apache
+    package:
+      name: httpd
+      state: present
+  - name: start apache
+    service:
+      name: httpd
+      state: started
+  - name: blockinfile module
+    blockinfile:
+      path: /var/www/html/index.html
+      create: yes
+      block: |
+       Welcome!
+       Please do not modify this file manually!
+      owner: 'apache'
+      group: 'apache'
+      mode: '0644'
+
+
