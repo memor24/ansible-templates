@@ -1,0 +1,12 @@
+#unarchive module using variables
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: unarchive module
+     archive:
+      src: /usr/src/security/devops.zip #extract:yes is already covered by src
+      dest: /opt/security/
+      owner: "{{ansible_user}}"
+      group: '1001'
+      mode: '0644'
