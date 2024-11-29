@@ -1,2 +1,2 @@
-#Notes
+# Notes
 Using Ansible Vault
