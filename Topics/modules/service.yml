@@ -1,0 +1,19 @@
+---
+- name: service module
+  hosts: all
+  become: yes
+
+  tasks:
+
+   - name: install httpd
+     dnf:
+      name:
+        - httpd
+        - php
+      state: present
+
+   - name: start & enable httpd
+     service:
+      name: httpd
+      state: started
+      enabled: yes

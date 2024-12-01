@@ -1,0 +1,39 @@
+
+---
+- name: Install and Configure Apache
+  hosts: all
+  become: yes
+
+  tasks:   
+    - name: Install Apache and PHP
+      yum:
+        name:
+          - httpd
+          - php
+        state: present
+
+    - name:set myroot as default path for apache
+      file:
+        path: /var/www/html/myroot
+        state: directory
+
+   - name: config apache
+     lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: "^DocumentRoot"
+      line: "DocumentRoot \"/var/www/html/myroot\""
+      backup: yes
+
+    - name: Copy PHP info template
+      template:   # copy template, not .j2 template!!
+        src: phpinfo.php.j2
+        dest: /var/www/html/myroot/phpinfo.php
+        owner: apache
+        group: apache
+        mode: 0644
+
+    - name: Restart Apache
+      service:
+        name: httpd
+        state: restarted
+        enabled: yes
