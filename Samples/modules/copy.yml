@@ -1,0 +1,7 @@
+- name: Copy a file from control host to the remote server
+  copy:
+    src: config.conf
+    dest: /etc/my_app/config.conf
+    owner: root
+    group: root
+    mode: '0644'

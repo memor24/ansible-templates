@@ -1,0 +1,9 @@
+#install samba on servers using ansible packages
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: install package / samba
+      package:
+       name: samba
+       state: present

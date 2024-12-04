@@ -1,0 +1,18 @@
+- name: Replace text on specific hosts
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Replace text on stapp01
+      replace:
+        path: /opt/data/media.txt
+        regexp: 'sth1'
+        replace: 'selse1'
+      when: inventory_hostname == "stapp01"
+
+    - name: Replace text on stapp02
+      replace:
+        path: /opt/data/story.txt
+        regexp: 'sth2'
+        replace: 'selse2'
+      when: inventory_hostname == "stapp02"
