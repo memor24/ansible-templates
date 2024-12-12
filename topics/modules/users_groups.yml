@@ -1,0 +1,19 @@
+---
+- hosts: stapp01
+  become: yes
+  tasks:
+
+  - name: create admin group
+    group:
+     name: admins
+     state: present
+  - name: adding admin group users
+    user:
+      state: present
+      name: "{{ item }}"
+      groups: admins, wheel  # adding to wheel to give them sudo access
+      password: "{{ 'sth' | password_hash ('sha256') }}" #password to be encrypted with ansible-vault
+    loop:
+    - john
+    - joe
+    - jim
