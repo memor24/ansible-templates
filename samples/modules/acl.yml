@@ -1,0 +1,8 @@
+# ansible acl module
+- name: Grant user Joe read access to a file
+  ansible.posix.acl:
+    path: /etc/sth.conf
+    entity: joe
+    etype: user
+    permissions: r
+    state: present
