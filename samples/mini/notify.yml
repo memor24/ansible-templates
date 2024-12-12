@@ -1,0 +1,13 @@
+---
+- name: 'send email notification if a service is down'
+  hosts: localhost
+  become: yes
+  tasks:
+    - command: 'service httpd status'
+      register: command_output
+
+    - mail:
+       to: admin@company.com
+       subject: service alert
+       body: httpd service is down
+      when: 'command_output.stdout.find("down") != -1'  # not -1, so "down" was found
