@@ -12,6 +12,10 @@ To automate the use of encrypted inventory without having to enter the vault pas
 ```
 ansible-playbook playbook.yml -i inventory --vault-password-file vault_pass.txt
 ```
+or simply update the ansible config file:
+```
+vault_password_file = /path/to/file/vault_pass.txt
+```
 ## Dynamic Inventory
 The idea is to avoid text files to store vault passwords, for security reasons and also to use inventory scripts for automation, and an inventory server for scalbility when working with hundreds or thousands of target machines.  For example
 ```
