@@ -1,0 +1,48 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+
+    - name: create source directory on all hosts if it doesn't exist
+      file:
+        path: /opt/finance
+        state: directory 
+    - name: create apache directory on all hosts if it doesn't exist
+      file:
+        path: /var/www/html
+        state: directory 
+
+
+    - name: create the empty file on stapp01
+      file:
+        path: /opt/finance/blog.txt
+        state: touch
+        owner: tony
+        group: tony
+        mode: '0777'
+      when: ansible_hostname == 'stapp01'
+    - name: Create a symbolic link to src in stapp01
+      file:
+        path: /opt/finance/*
+        state: link
+        src: /var/www/html/*
+        force: yes
+      when: ansible_hostname == 'stapp01'
+
+
+    - name: create the empty file on stapp02
+      file:
+        path: /opt/finance/story.txt
+        state: touch
+        owner: steve
+        group: steve
+        mode: '0644'
+      when: ansible_hostname == 'stapp02'
+    - name: Create a symbolic link to src in stapp02
+      file:
+        path: /opt/finance/*
+        state: link
+        src: /var/www/html/*
+      when: ansible_hostname == 'stapp02'
+
+
