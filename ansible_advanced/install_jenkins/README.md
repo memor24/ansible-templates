@@ -1,10 +1,10 @@
-## playbook1
-step by step tasks
+## playbook1 : step by step tasks
+
 ```
 ansible-playbook playbook1.yml
 ```
-## playbook2
-using community role: \
+## playbook2 : using community role
+
 Download the role from ansible galaxy:
 ```
 ansible-galaxy role install geerlingguy.jenkins
