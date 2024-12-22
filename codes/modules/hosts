@@ -1,0 +1,13 @@
+[web_servers]
+172.16.250.120
+172.16.250.248
+
+[file_servers]
+172.16.250.122
+
+[db_servers]
+target ansible_ssh_host = 172.16.250.121
+
+[backup_server]
+target backup_file = /var/my_db_bkp
+
