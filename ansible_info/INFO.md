@@ -1,4 +1,5 @@
-## yaml :
+----------------------
+## YAML
 
 Key/Value :
 ```yaml
@@ -39,6 +40,7 @@ Fruits:
 Dictionary = Unordered \
 List = Ordered \
 
+----------------------------------------------------------
 ## Inventory
 for target system (list of servers) in yaml or ini
 
