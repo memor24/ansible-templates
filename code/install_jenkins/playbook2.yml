@@ -1,0 +1,6 @@
+---
+- host: localhost
+  become: yes
+  tasks:
+     - roles:
+         role: geerlingguy.jenkins
