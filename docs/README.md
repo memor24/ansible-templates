@@ -528,3 +528,8 @@ import: ( import_playbook, import_tasks, import_vars, import_role )
       local_action: shell 'ls /home' # run on localhost + all servers
       register: home_out
 ```
+--------------------------------------
+## Ansible best practices
+Ansible <a href="https://github.com/devopshobbies/ansible-templates/blob/master/part33-playbook-best-practices/README.md" target="_blank" rel="noopener noreferrer">best practices</a>
+
+
