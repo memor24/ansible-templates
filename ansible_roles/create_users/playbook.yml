@@ -1,0 +1,27 @@
+---
+- hosts: all
+  become: true
+  vars:
+    new_user: "admin"
+  tasks:
+    - name: create user
+      user:
+        name: "{{ new_user }}"
+        groups: root, wheel
+        shell: /bin/bash
+        create_home: yes
+        state: present
+
+    - name: create ssh key
+      user:
+        name: "{{ new_user }}"    
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+
+    - name: create password policy
+      user:
+        name: "{{ new_user }}"
+        password: "admin_pass"
+        password_expire_min: 7
+        password_expire_max: 90
