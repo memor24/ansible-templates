@@ -1,0 +1,32 @@
+---
+- name: install ca cert for https access
+  apt:
+    name: ca-certificates
+    status: present
+
+# add nginx repo
+- name: add nginx signing key
+  apt_key:
+    url: "{{ nginx_repo_key_url }}"
+    state: present
+- name: add nginx repository
+  apt_repository:
+    repo: "deb {{ nginx_repo_url }} {{ ansible_distribution_release }} main"
+    state: present
+    filename: nginx
+
+# update cache after adding nginx repository
+- name: update apt cache 
+  apt:
+    update_cache: yes
+
+# install, enable and start service
+- name: install nginx required version
+  apt: 
+    name: "nginx={{ nginx_version }}~{{ ansible_distribution_release }}"
+    state: present
+- name: enable and start nginx service
+  service:
+    name: nginx
+    enabled: yes
+    state: started
