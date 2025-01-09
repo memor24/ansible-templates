@@ -1,0 +1,21 @@
+---
+- name: install prerequisites
+  apt:
+    name "{{ items }}"
+    state: present
+  loop: "{{ prerequisites }}"
+## install prerequisites
+
+# install packages
+- name: install docker packages
+  apt: 
+    name: "{{ items }}"
+    state: present
+  loop: "{{ docker_packages }}"
+# enable and start services
+- name: start services
+  service:
+    name: "{{ items }}"
+    enabled: yes
+    state: started
+  loop: "{{ docker_services }}"
