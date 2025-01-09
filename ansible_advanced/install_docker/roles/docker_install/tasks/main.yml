@@ -5,7 +5,23 @@
     state: present
   loop: "{{ prerequisites }}"
 ## install prerequisites
-
+- name: create docker directory
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '1755'
+- name: download docker gpg key
+  get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: '0644'
+- name: add docker to apt
+  copy:
+   content: |
+    deb [arch={{ ansible_architecture }} signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }}
+- name: update apt after adding docker
+  apt:
+    update_chache: yes
 # install packages
 - name: install docker packages
   apt: 
