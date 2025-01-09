@@ -1,45 +1,29 @@
-----------------------
-## YAML
-
-Key/Value :
+----------------------------------
+## Playbook
 ```yaml
-name: jane
-family: doe
-age: 18
+- 
+  name: play
+  hosts: all, *, localhost, Group1, Host1  # ==> read from inventory
+  tasks:
+    - name: run command date
+      command: date  # ==> module
+    - name: run script
+      script: test.sh  # ==> module
 ```
 
-Array / List :
-```yaml
-courses:
-- math
-- physucs
-- biology
+list of ansible modules :
+```bash
+ansible-doc -l
 ```
-
-Dictionary / Map:
-```yaml
-grade:
-    math: 70
-    physics: 80
-    biology: 100
+run ansible playbook :
+```bash
+ansible-playbook playbook.yml
 ```
-
-List / Map / Key Value :
-```yaml
-Fruits:
-    - Apple:
-        Calories: 105
-        Fat: 0.4 g
-        Carbs: 0.4 g
-    - Grape:
-        Calories: 62
-        Fat: 0.3 g
-        Carbs: 17 g
+**dynamic inventory**
+```bash
+ansible-playbook -i inventory.txt playbook.yml
+                    inventory.py
 ```
-
-Dictionary = Unordered \
-List = Ordered \
-
 ----------------------------------------------------------
 ## Inventory
 for target system (list of servers) in yaml or ini
@@ -86,32 +70,6 @@ localhost  ansible_connection=localhost
 ```
 /etc/ansible/ansible.cfg ==> ansible config file
 #host_key_checking=false ==> uncomment it for not check key
-```
-----------------------------------
-## Playbook
-```yaml
-- 
-  name: play
-  hosts: all, *, localhost, Group1, Host1  # ==> read from inventory
-  tasks:
-    - name: run command date
-      command: date  # ==> module
-    - name: run script
-      script: test.sh  # ==> module
-```
-
-list of ansible modules :
-```bash
-ansible-doc -l
-```
-run ansible playbook :
-```bash
-ansible-playbook playbook.yml
-```
-**dynamic inventory**
-```bash
-ansible-playbook -i inventory.txt playbook.yml
-                    inventory.py
 ```
 ----------------------------------
 ## Modules
@@ -532,4 +490,45 @@ import: ( import_playbook, import_tasks, import_vars, import_role )
 ## Ansible best practices
 Ansible <a href="https://github.com/devopshobbies/ansible-templates/blob/master/part33-playbook-best-practices/README.md" target="_blank" rel="noopener noreferrer">best practices</a>
 
+----------------------
+### PS: YAML
+
+Key/Value :
+```yaml
+name: jane
+family: doe
+age: 18
+```
+
+Array / List :
+```yaml
+courses:
+- math
+- physucs
+- biology
+```
+
+Dictionary / Map:
+```yaml
+grade:
+    math: 70
+    physics: 80
+    biology: 100
+```
+
+List / Map / Key Value :
+```yaml
+Fruits:
+    - Apple:
+        Calories: 105
+        Fat: 0.4 g
+        Carbs: 0.4 g
+    - Grape:
+        Calories: 62
+        Fat: 0.3 g
+        Carbs: 17 g
+```
+
+Dictionary = Unordered \
+List = Ordered \
 
