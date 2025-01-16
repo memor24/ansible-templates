@@ -11,5 +11,5 @@ ansible-galaxy role install geerlingguy.jenkins
 ```
 Then run the playbook updated with the role:
 ```
-ansible-playbook playbook1.yml
+ansible-playbook playbook2.yml
 ```
